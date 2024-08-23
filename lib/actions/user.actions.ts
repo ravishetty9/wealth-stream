@@ -50,6 +50,7 @@ export const signIn = async ({ email, password }: signInProps) => {
     });
 
     const user = await getUserInfo({ userId: session.userId });
+
     return parseStringify(user);
   } catch (error) {
     console.error("Error", error);
@@ -113,6 +114,7 @@ export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
     const result = await account.get();
+
     const user = await getUserInfo({ userId: result.$id });
 
     return parseStringify(user);
@@ -180,7 +182,9 @@ export const createBankAccount = async ({
     );
 
     return parseStringify(bankAccount);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const exchangePublicToken = async ({
@@ -225,7 +229,7 @@ export const exchangePublicToken = async ({
     // If the funding source URL is not created, throw an error
     if (!fundingSourceUrl) throw Error;
 
-    // Create a bank account using the user ID, item ID, account ID, access token, funding source URL, and sharable ID
+    // Create a bank account using the user ID, item ID, account ID, access token, funding source URL, and shareableId ID
     await createBankAccount({
       userId: user.$id,
       bankId: itemId,
@@ -250,6 +254,7 @@ export const exchangePublicToken = async ({
 export const getBanks = async ({ userId }: getBanksProps) => {
   try {
     const { database } = await createAdminClient();
+
     const banks = await database.listDocuments(
       DATABASE_ID!,
       BANK_COLLECTION_ID!,
