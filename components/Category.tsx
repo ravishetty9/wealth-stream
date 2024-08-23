@@ -28,7 +28,6 @@ export const Category = ({ category }: CategoryProps) => {
         <Progress
           value={(category.count / category.totalCount) * 100}
           className={cn("h-2 w-full", progressBg)}
-          // @ts-ignore ignore for now
           indicatorClassName={cn("h-2 w-full", indicator)}
         />
       </div>
