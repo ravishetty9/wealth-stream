@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Image from "next/image";
-// import Loading from "@/components/Loading";
 import MobileNav from "@/components/MobileNav";
 import Sidebar from "@/components/Sidebar";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
