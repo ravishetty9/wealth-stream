@@ -1,8 +1,11 @@
+import { Suspense } from "react";
 import Image from "next/image";
-import Sidebar from "@/components/Sidebar";
+// import Loading from "@/components/Loading";
 import MobileNav from "@/components/MobileNav";
+import Sidebar from "@/components/Sidebar";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
+import Loading from "./loading";
 
 export default async function RootLayout({
   children,
@@ -22,7 +25,7 @@ export default async function RootLayout({
             <MobileNav user={loggedIn} />
           </div>
         </div>
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </div>
     </main>
   );
