@@ -252,10 +252,6 @@ declare interface DoughnutChartProps {
   accounts: Account[];
 }
 
-declare interface PaymentTransferFormProps {
-  accounts: Account[];
-}
-
 // Actions
 declare interface getAccountsProps {
   userId: string;
@@ -290,10 +286,6 @@ declare interface CreateTransactionProps {
   email: string;
 }
 
-declare interface getTransactionsByBankIdProps {
-  bankId: string;
-}
-
 declare interface signInProps {
   email: string;
   password: string;
@@ -313,7 +305,6 @@ declare interface createBankAccountProps {
   userId: string;
   accountId: string;
   bankId: string;
-  fundingSourceUrl: string;
   shareableId: string;
 }
 
