@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wealth Stream
 
-## Getting Started
+Welcome to the Wealth Stream app! This project was created as a learning exercise to explore the Plaid API and gain more exposure to the NextJS framework, TailwindCSS, and TypeScript. The app allows users to connect their bank accounts using Plaid and manage their financial data efficiently.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Bank Account Integration**: Securely connect and retrieve financial data from your bank accounts using the Plaid API.
+- **User Authentication**: Secure login and authentication handled via AppWrite.
+- **Responsive Design**: TailwindCSS ensures that the app looks great on all devices.
+- **Server-Side Rendering**: NextJS powers efficient server-side rendering for improved performance and SEO.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **ReactJS**: For building dynamic and interactive user interfaces.
+- **NextJS**: Utilized for its server-side rendering, API routes, and file-based routing capabilities.
+- **TailwindCSS**: A utility-first CSS framework for creating modern, responsive designs.
+- **TypeScript**: Adds type safety and improved developer tooling to JavaScript.
+- **AppWrite**: Provides backend services like authentication and data storage.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running the App Locally
 
-## Learn More
+To run the app locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ensure you have the following installed on your machine:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Node.js** (v14.x or later)
+- **npm** or **yarn**
 
-## Deploy on Vercel
+### Steps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the Repository**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/ravishetty9/wealth-stream.git
+   cd wealth-stream
+   ```
+2. **Install Dependencies**
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using yarn:
+   ```bash
+   yarn install
+   ```
+
+3. **Set Up Environment Variables**
+   
+   Create a .env.local file in the root of your project and add your environment variables:
+
+   ```env
+   NEXT_PUBLIC_PLAID_CLIENT_ID=your-plaid-client-id
+   NEXT_PUBLIC_PLAID_SECRET=your-plaid-secret
+   NEXT_PUBLIC_APPWRITE_PROJECT_ID=your-appwrite-project-id
+   NEXT_PUBLIC_APPWRITE_ENDPOINT=your-appwrite-endpoint
+   ```
+   
+5. **Run the Development Server**
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or using yarn:
+   ```bash
+   yarn dev
+   ```
+   The app will be running at http://localhost:3000.
+   
+7. **Build and Run in Production Mode**
+
+   To build and run the app in production mode:
+
+    Using npm:
+
+   ```bash
+   npm run build
+   npm start
+   ```
+
+   Or using yarn:
+   ```bash
+   yarn build
+   yarn start
+   ```
